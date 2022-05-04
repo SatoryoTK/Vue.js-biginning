@@ -18,7 +18,7 @@
         <th><button v-on:click.self="changeColor3" v-bind:style="color3">タブ3</button></th>
       </tr>
     </table>
-    <p></p>
+    <div>{{text}}</div>
   </div>
   <script>
     const vm = new Vue({
@@ -34,17 +34,27 @@
           color3: {
             backgroundColor: 'white'
           },
+          text:''
         }
       },
       methods: {
         changeColor1() {
-          this.color1 = { 'color': 'white', 'background-color': 'black' }
+          this.color1 = { 'color': 'white', 'background-color': 'black' },
+          this.color2 = { 'color': 'black', 'background-color': 'white' },
+          this.color3 = { 'color': 'black', 'background-color': 'white' },
+          this.text='content1'
         },
         changeColor2() {
-          this.color2 = { 'color': 'white', 'background-color': 'black' }
+          this.color1 = { 'color': 'black', 'background-color': 'white' },
+          this.color2 = { 'color': 'white', 'background-color': 'black' },
+          this.color3 = { 'color': 'black', 'background-color': 'white' },
+          this.text='content2'
         },
         changeColor3() {
-          this.color3 = { 'color': 'white', 'background-color': 'black' }
+          this.color1 = { 'color': 'black', 'background-color': 'white' },
+          this.color2 = { 'color': 'black', 'background-color': 'white' },
+          this.color3 = { 'color': 'white', 'background-color': 'black' },
+          this.text='content3'
         }
       }
     });
